@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  webapp-color:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-11-11T02:58:58.713573354Z"
+    description: A Helm chart for Kubernetes
+    digest: 55cbaf72de4c69b4b4fe6338f398b17030e8b1a5026b2526a37b8f3db0fbc0e4
+    name: webapp-color
+    type: application
+    urls:
+    - webapp-color-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-11-11T02:58:58.712876145Z"
