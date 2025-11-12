@@ -37,6 +37,18 @@ This is a relative path, but GitHub Pages requires the full absolute URL.
 7. Install chart from repo
 > helm install myapp myrepo/chartname
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q. How to Push chart and key
+
+1. Need to generate PAT token classic with package permission
+
+2. Then Authenticate it
+> echo "Add your token" | helm registry login ghcr.io --username ayshkatheria --password-stdin
+
+3. helm push webapp-color-0.1.0.tgz oci://ghcr.io/ayshkatheria/anyname
+(it will automatically create package with that name)
+
+4. Install gpg and generate full key
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Q. How to verify helm chat using pubkey and package
