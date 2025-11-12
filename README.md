@@ -38,4 +38,48 @@ This is a relative path, but GitHub Pages requires the full absolute URL.
 > helm install myapp myrepo/chartname
 
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q. How to verify helm chat using pubkey and package
+-pull the chartt with prov file
+1. helm pull oci://ghcr.io/ayshkatheria/hello-world/helloworld --version 0.1.0 --prov
+
+- Do ls and verify both the files are present
+".tgz" and ".prov"
+
+2. Download pubkey from git repo just need to run below command no auth is required
+curl -O https://raw.githubusercontent.com/ayshkatheria/helm-repo/main/mypubkey.asc
+
+- do cat key.asc and verify content tis there and not getting 404
+
+3. Import the key 
+  > gpg --import mypubkey.asc
+
+4. Export it into .gpg as it wont support .kbx
+  > gpg --export 'ayshtesting@gmail.com' > ~/.gnupg/pubring.gpg
+  note: mail id or alisa will get running command >gpg --list-keys
+
+5. Now verify the chart using key
+  > helm verify helloworld-0.1.0.tgz --keyring ~/.gnupg/pubring.gpg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
